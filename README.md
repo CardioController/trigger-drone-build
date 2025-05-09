@@ -14,7 +14,7 @@ steps:
     commands:
       - git clone https://github.com/CardioController/trigger-drone-build.git trigger-drone-build
 
-  - name: trigger back end docker image build
+  - name: trigger build
     image: python:alpine
     environment:
       DRONE_SERVER: 
