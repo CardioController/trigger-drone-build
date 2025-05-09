@@ -11,11 +11,8 @@ type: docker
 steps:
   - name: clone trigger drone build repo
     image: drone/git
-    environment:
-      REPO_URL:
-        from_secret: REPO_URL
     commands:
-      - git clone $REPO_URL
+      - git clone https://github.com/CardioController/trigger-drone-build.git trigger-drone-build
 
   - name: trigger back end docker image build
     image: python:alpine
@@ -38,7 +35,6 @@ steps:
 
 ## environment variables
 ```
-REPO_URL
 DRONE_SERVER
 DRONE_TOKEN
 REPO_OWNER
